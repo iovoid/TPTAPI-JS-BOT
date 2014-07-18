@@ -2,7 +2,7 @@
 //Login:
 var usnm="username";
 var passw="password";
-var loginurl="http://tptapi.com/login_proc.php?login"+encodeURI("Password:"passw)+encodeURI("Username:"usnm);
+var loginurl="http://tptapi.com/login_proc.php?login"+encodeURI("Password:"+passw)+encodeURI("Username:"+usnm);
 var xhr= New XMLHttpRequest();
 xhr.open(false,loginurl,"GET");
 xhr.send();
