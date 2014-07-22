@@ -15,8 +15,7 @@ var elemprice=function(element){
 xhr.open("GET","http://tptapi.com/getjson.php?type=stock");
 xhr.send();
 var jsonpricelist=xhr.responseText;
-var price=jsonpricelist.substring(jsonpricelist.indexOf(element+":PRICE:"),jsonpricelist.indexOf("}"))
-}
+var price=jsonpricelist.substring(jsonpricelist.indexOf(element+":PRICE:"),jsonpricelist.indexOf("\":{"Price\":\""}
 //Print how many money have the user:
     var money=function(){
     xhr.open(false,"http://tptapi.com/money.php","GET");
