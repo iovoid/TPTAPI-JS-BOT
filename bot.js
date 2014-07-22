@@ -11,12 +11,17 @@ var xhr= New XMLHttpRequest();
 xhr.open("POST",loginurl,true);
 xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 xhr.send("Username="+usnm+"&Password="+passw);
+var elemprice=function(element){
+xhr.open("GET","http://tptapi.com/getjson.php?type=stock");
+xhr.send();
+var jsonpricelist=xhr.responseText;
+var price=jsonpricelist.substring(jsonpricelist.indexOf(""),jsonpricelist.indexOf(""))
+}
 //Print how many money have the user:
-//False will be remplaced by true or a variable or the while may be removed.
     var money=function(){
     xhr.open(false,"http://tptapi.com/money.php","GET");
 var val= xhr.responseText;
-var moneyval = val.substr(val.indexOf("Current Balance:") + 16);
+var moneyval = val.substring(val.indexOf("Current Balance:"),val.indexOf("."));
 return moneyval;
 }
 //Buy stocks:
